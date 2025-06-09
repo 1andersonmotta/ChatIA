@@ -1,1 +1,117 @@
-node_modules
+# ========================================
+# 🤖 AI Chat Interface - .gitignore
+# ========================================
+
+# Dependências
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variáveis de ambiente (IMPORTANTES!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Cobertura de testes
+coverage/
+*.lcov
+.nyc_output/
+
+# Cache do ESLint
+.eslintcache
+
+# Cache do Prettier
+.prettierrc
+
+# Cache do Stylelint
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Cache de empacotamento opcional
+.npm-cache/
+
+# Arquivos de lock opcionais
+package-lock.json
+yarn.lock
+
+# Documentação gerada
+docs/generated/
+
+# Banco de dados local
+*.db
+*.sqlite
+*.sqlite3
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+
+# Arquivos do sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos de backup
+*.backup
+*.bak
+*.orig
+
+# Diretórios de build
+build/
+dist/
+out/
+
+# Certificados SSL
+*.pem
+*.key
+*.crt
+
+# Uploads de usuários
+uploads/
+public/uploads/
+
+# Cache de APIs
+.cache/
+api-cache/
+
+# Arquivos específicos do projeto
+README_OLD.md
+
+# ========================================
+# 📝 IMPORTANTES: Nunca commitar chaves de API!
+# ========================================
