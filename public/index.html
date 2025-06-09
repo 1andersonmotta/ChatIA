@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1><i class="fas fa-robot"></i> AI Chat Interface</h1>
+                    <p>Escolha sua IA favorita e comece a conversar!</p>
+                </div>
+                <a href="group-chat.html" class="group-chat-button">
+                    <i class="fas fa-users"></i>
+                    <span>Sala de Chat IA</span>
+                    <small>Converse com todas as IAs</small>
+                </a>
+            </div>
+        </header>
+        <div class="ai-selector">
+            <h3>Selecione a IA:</h3>
+            <div class="ai-options">
+                <!-- <div class="ai-card active" data-ai="gemini">
+                    <div class="ai-icon gemini-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4>Google Gemini</h4>
+                    <span class="ai-status">Gemini Pro</span>
+                    <span class="price-tag free">100% Grátis</span>
+                </div> -->
+                <div class="ai-card" data-ai="deepseek">
+                    <div class="ai-icon deepseek-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>DeepSeek</h4>
+                    <span class="ai-status">R1 Free</span>
+                    <span class="price-tag free">100% Grátis</span>
+                </div>
+                <div class="ai-card" data-ai="groq">
+                    <div class="ai-icon groq-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>Groq</h4>
+                    <span class="ai-status">LLaMA/Mixtral</span>
+                    <span class="price-tag free">100% Grátis</span>
+                </div>
+
+                <div class="ai-card" data-ai="openrouter-gpt4o">
+                    <div class="ai-icon openrouter-gpt4o-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>GPT-4o</h4>
+                    <span class="ai-status">Via OpenRouter</span>
+                    <span class="price-tag premium">Premium</span>
+                </div>
+
+                <div class="ai-card" data-ai="openrouter-claude">
+                    <div class="ai-icon openrouter-claude-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h4>Claude 3</h4>
+                    <span class="ai-status">Via OpenRouter</span>
+                    <span class="price-tag premium">Premium</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <!-- <div class="chat-header">
+                <span id="current-ai">💎 Google Gemini</span>
+                <span class="status-indicator online"></span>
+            </div> -->
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Olá! Eu sou sua assistente de IA. Como posso ajudar você hoje?</p>
+                        <span class="message-time">Agora</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>IA está digitando...</span>
+            </div>
+
+            <div class="chat-input">
+                <div class="input-container">
+                    <textarea id="messageInput" placeholder="Digite sua pergunta aqui..." rows="1"></textarea>
+                    <button id="sendButton" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-actions">
+                    <button id="clearChat" class="action-button">
+                        <i class="fas fa-trash"></i> Limpar Chat
+                    </button>
+                    <span class="char-counter">0/1000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="errorText"></span>
+            <button id="closeError">&times;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

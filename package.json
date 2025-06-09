@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-ai-project",
+  "version": "1.0.0",
+  "description": "A Node.js project integrating various AI APIs.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js",
+    "dev:nodemon": "nodemon src/app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "groq-sdk": "^0.23.0",
+    "openai": "^4.103.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^6.1.0"
+  },
+  "author": "Anderson Motta",
+  "license": "MIT"
+}

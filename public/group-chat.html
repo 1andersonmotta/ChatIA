@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Chat IA - Conversa em Grupo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="group-chat.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container group-chat-container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-users"></i> Sala de Chat IA</h1>
+                <p>Converse com todas as IAs ao mesmo tempo!</p>
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar ao Chat Individual
+                </a>
+            </div>
+        </header>
+
+        <!-- Configuração da Sala -->
+        <div class="room-settings">
+            <div class="settings-header">
+                <h3><i class="fas fa-cog"></i> Configurações da Sala</h3>
+                <button id="toggleSettings" class="toggle-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+
+            <div class="settings-content" id="settingsContent">
+                <div class="ai-selection">
+                    <h4>Selecionar IAs para a Conversa:</h4>
+                    <div class="ai-checkboxes" id="aiCheckboxes">
+                        <!-- IAs serão carregadas dinamicamente -->
+                    </div>
+                </div>
+
+                <div class="chat-mode">
+                    <h4>Modo de Conversa:</h4>
+                    <div class="mode-options">
+                        <label class="mode-option">
+                            <input type="radio" name="chatMode" value="single" checked>
+                            <span class="mode-label">
+                                <i class="fas fa-comment"></i>
+                                <strong>Resposta Única</strong>
+                                <small>Cada IA responde uma vez à sua mensagem</small>
+                            </span>
+                        </label>
+
+                        <label class="mode-option">
+                            <input type="radio" name="chatMode" value="continuous">
+                            <span class="mode-label">
+                                <i class="fas fa-comments"></i>
+                                <strong>Conversa Contínua</strong>
+                                <small>IAs conversam entre si por várias rodadas</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="continuous-settings" id="continuousSettings" style="display: none;">
+                    <label for="roundsInput">Número de Rodadas:</label>
+                    <input type="number" id="roundsInput" min="2" max="10" value="3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="group-chat-main">
+            <!-- Participantes -->
+            <div class="participants-panel">
+                <h4><i class="fas fa-users"></i> Participantes Ativos</h4>
+                <div class="participants-list" id="participantsList">
+                    <!-- Participantes serão mostrados aqui -->
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-area">
+                <div class="chat-messages" id="groupChatMessages">
+                    <div class="welcome-message">
+                        <div class="message-content">
+                            <h3>🎉 Bem-vindo à Sala de Chat IA!</h3>
+                            <p>Configure suas IAs favoritas e comece uma conversa épica!</p>
+                            <ul>
+                                <li>🤖 Todas as IAs respondem simultaneamente</li>
+                                <li>⚡ Respostas em tempo real</li>
+                                <li>💬 Modo conversa contínua disponível</li>
+                                <li>🔧 Configure quais IAs participam</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="chat-input-area">
+                    <div class="input-container">
+                        <textarea id="groupMessageInput" placeholder="Digite sua mensagem para todas as IAs..."
+                            rows="3"></textarea>
+                        <button id="sendGroupMessage" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Enviar para Todas</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <h3>IAs Processando...</h3>
+                <p id="loadingStatus">Aguardando respostas das IAs selecionadas...</p>
+                <div class="loading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="group-chat.js"></script>
+</body>
+
+</html>
